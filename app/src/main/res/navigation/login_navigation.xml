@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_enterPhoneNumberFragment_to_enterOtpFragment"
             app:destination="@id/enterOtpFragment" />
+        <action
+            android:id="@+id/action_enterPhoneNumberFragment_to_enterEmailFragment"
+            app:destination="@id/enterEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/enterOtpFragment"
@@ -34,4 +37,17 @@
             android:name="user"
             app:argType="com.google.firebase.auth.FirebaseUser" />
     </fragment>
+    <fragment
+        android:id="@+id/enterEmailFragment"
+        android:name="com.example.kraftopia.ui.login.EnterEmailFragment"
+        android:label="EnterEmailFragment" >
+        <action
+            android:id="@+id/action_enterEmailFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.kraftopia.ui.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

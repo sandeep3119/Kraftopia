@@ -10,4 +10,13 @@
         <item name="windowNoTitle">true</item>
         <item name="android:actionBarSize">0dp</item>
     </style>
+
+    <style name="Theme.Kraftopia.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Kraftopia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Kraftopia.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

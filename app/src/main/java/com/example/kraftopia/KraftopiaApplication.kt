@@ -10,7 +10,6 @@ import javax.inject.Inject
 @HiltAndroidApp
 class KraftopiaApplication:Application() {
 
-
      val mAuth by lazy {
         Firebase.auth
     }

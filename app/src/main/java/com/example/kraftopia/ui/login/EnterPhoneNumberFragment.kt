@@ -12,8 +12,6 @@ import com.example.kraftopia.R
 import com.example.kraftopia.databinding.FragmentEnterPhoneNumberBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.hbb20.CountryCodePicker
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
@@ -42,7 +40,7 @@ class EnterPhoneNumberFragment : Fragment(),CountryCodePicker.OnCountryChangeLis
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.sendCodeButton.setOnClickListener {
-            phoneNo=countryCode+binding.phoneNumber.text.toString()
+            phoneNo="+"+countryCode+binding.phoneNumber.text.toString()
            // sendAuthCode(phoneNo)
             val action=EnterPhoneNumberFragmentDirections.actionEnterPhoneNumberFragmentToEnterOtpFragment(phoneNo,"11"
             )
@@ -50,6 +48,9 @@ class EnterPhoneNumberFragment : Fragment(),CountryCodePicker.OnCountryChangeLis
         }
         binding.countryCodePicker.setDefaultCountryUsingNameCode("IN")
         binding.countryCodePicker.setOnCountryChangeListener(this)
+        binding.signinEmailText.setOnClickListener {
+            findNavController().navigate(R.id.action_enterPhoneNumberFragment_to_enterEmailFragment)
+        }
     }
 
     private fun sendAuthCode(phoneNumber:String) {

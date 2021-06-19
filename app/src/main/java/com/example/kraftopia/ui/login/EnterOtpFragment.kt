@@ -1,6 +1,7 @@
 package com.example.kraftopia.ui.login
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -29,11 +30,26 @@ class EnterOtpFragment : Fragment() {
     private val viewModel:LoginViewModel by viewModels()
     private lateinit var binding: FragmentEnterOtpBinding
     val args:EnterOtpFragmentArgs by navArgs()
-    override fun onStart() {
+//    override fun onStart() {
+//        viewModel.startTimer()
+//        super.onStart()
+//    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         viewModel.startTimer()
-        super.onStart()
+        super.onCreate(savedInstanceState)
     }
 
+
+    override fun onPause() {
+        super.onPause()
+        (activity as LoginActivity).requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+    }
+    override fun onResume() {
+        super.onResume()
+        val currOrientation= (activity as LoginActivity).resources.configuration.orientation
+        (activity as LoginActivity).requestedOrientation=currOrientation
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
