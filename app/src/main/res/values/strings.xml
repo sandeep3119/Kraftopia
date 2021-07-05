@@ -14,4 +14,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="profile">Profile</string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact US</string>
+    <string name="terms_and_condition">Terms And Condition</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="feeds">Feeds</string>
+    <string name="shop">Shop</string>
+    <string name="order">Order</string>
 </resources>

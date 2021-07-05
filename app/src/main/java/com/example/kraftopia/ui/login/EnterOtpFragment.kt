@@ -73,10 +73,12 @@ class EnterOtpFragment : Fragment() {
             }
         })
         binding.verifyOtpButton.setOnClickListener {
+            binding.progressBar2.visibility=View.VISIBLE
+            binding.verifyOtpButton.visibility=View.GONE
             Log.d("yolo",binding.pinView.text.toString())
             viewModel.timer.cancel()
-            findNavController().navigate(R.id.action_enterOtpFragment_to_registerFragment)
-            //verifyCode(binding.pinView.text.toString())
+            //findNavController().navigate(R.id.action_enterOtpFragment_to_registerFragment)
+            verifyCode(binding.pinView.text.toString())
         }
         binding.resend.setOnClickListener {
 
@@ -99,17 +101,17 @@ class EnterOtpFragment : Fragment() {
                     val lastSignInTime=user?.metadata?.lastSignInTimestamp
                     //New user
                     if(creationTime==lastSignInTime){
-                        val action=EnterOtpFragmentDirections.actionEnterOtpFragmentToRegisterFragment(user!!)
+                        Log.d("yolo", "signInWithCredential:success==> New user")
+                        val action=EnterOtpFragmentDirections.actionEnterOtpFragmentToRegisterFragment(args.phoneNo,user!!.uid)
                         findNavController().navigate(action)
                     }else {
-                        val intent= Intent(activity,MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                        startActivity(intent)
-                        (activity as LoginActivity).finish()
+//                        val intent= Intent(activity,MainActivity::class.java)
+//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//                        startActivity(intent)
+//                        (activity as LoginActivity).finish()
+                        Log.d("yolo", "signInWithCredential:success==> Old User")
 
                     }
-
-
                 } else {
                     // Sign in failed, display a message and update the UI
                     Log.w("yolo", "signInWithCredential:failure", task.exception)
@@ -117,6 +119,8 @@ class EnterOtpFragment : Fragment() {
                         // The verification code entered was invalid
                     }
                     // Update UI
+                    binding.progressBar2.visibility=View.GONE
+                    binding.verifyOtpButton.visibility=View.VISIBLE
                 }
             }
     }

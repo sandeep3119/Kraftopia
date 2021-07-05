@@ -34,8 +34,14 @@
         android:name="com.example.kraftopia.ui.login.RegisterFragment"
         android:label="RegisterFragment" >
         <argument
-            android:name="user"
-            app:argType="com.google.firebase.auth.FirebaseUser" />
+            android:name="phoneNumber"
+            app:argType="string" />
+        <argument
+            android:name="firebaseId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_registerFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
     <fragment
         android:id="@+id/enterEmailFragment"

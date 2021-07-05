@@ -79,6 +79,9 @@ dependencies {
     //Third party util library
     implementation 'com.hbb20:ccp:2.5.1'
     implementation 'io.github.chaosleung:pinview:1.4.4'
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
 
     //Dependency Injection-Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"

@@ -6,6 +6,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.kraftopia.data.model.RegisterRequest
+import com.example.kraftopia.data.model.RegisterResponse
 import com.example.kraftopia.data.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -32,6 +34,15 @@ class LoginViewModel @Inject constructor(private val mainRepository: MainReposit
         viewModelScope.launch {
             _token.postValue(mainRepository.getUserToken(email,password))
         }
+    }
+
+    fun registerUser(registerRequest: RegisterRequest,password: String){
+
+        viewModelScope.launch {
+           val registerResponse=mainRepository.registerUser(registerRequest)
+            fetchToken(registerResponse.email,password)
+        }
+
     }
     fun startTimer(){
         _showResendText.postValue(false)

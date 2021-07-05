@@ -25,7 +25,7 @@ class EnterPhoneNumberFragment : Fragment(),CountryCodePicker.OnCountryChangeLis
     private lateinit var binding:FragmentEnterPhoneNumberBinding
     private var storedVerificationId:String? = ""
     private lateinit var resendToken:PhoneAuthProvider.ForceResendingToken
-    private var countryCode:String="+91"
+    private var countryCode:String="91"
     private lateinit var phoneNo:String
 
     override fun onCreateView(
@@ -41,10 +41,9 @@ class EnterPhoneNumberFragment : Fragment(),CountryCodePicker.OnCountryChangeLis
         super.onViewCreated(view, savedInstanceState)
         binding.sendCodeButton.setOnClickListener {
             phoneNo="+"+countryCode+binding.phoneNumber.text.toString()
-           // sendAuthCode(phoneNo)
-            val action=EnterPhoneNumberFragmentDirections.actionEnterPhoneNumberFragmentToEnterOtpFragment(phoneNo,"11"
-            )
-            findNavController().navigate(action)
+            sendAuthCode(phoneNo)
+           // val action=EnterPhoneNumberFragmentDirections.actionEnterPhoneNumberFragmentToEnterOtpFragment(phoneNo,"11" )
+           // findNavController().navigate(action)
         }
         binding.countryCodePicker.setDefaultCountryUsingNameCode("IN")
         binding.countryCodePicker.setOnCountryChangeListener(this)
