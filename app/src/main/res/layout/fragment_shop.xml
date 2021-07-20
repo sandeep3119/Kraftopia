@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+    android:scrollIndicators="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.main.shop.Shop">
+
+      <include
+          android:id="@+id/include"
+          layout="@layout/banner_shop"
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          />
+
+      <TextView
+          android:id="@+id/category"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:text="Categories"
+  />
+
+      <View
+          android:id="@+id/divider"
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="16dp"
+          android:background="?android:attr/listDivider" />
+
+      <include
+          android:id="@+id/include_category_grid"
+          layout="@layout/category_grid" />
+      <TextView
+          android:id="@+id/latest_product"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:text="Latest Product"
+          />
+
+      <View
+          android:id="@+id/divider2"
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="16dp"
+          android:background="?android:attr/listDivider" />
+
+      <include
+          android:id="@+id/include_latest_product_grid"
+          layout="@layout/latest_product_grid" />
+
+    </LinearLayout>
+  </ScrollView>
+</layout>

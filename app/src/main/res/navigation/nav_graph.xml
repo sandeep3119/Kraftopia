@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_shop">
+    <fragment
+        android:id="@+id/nav_shop"
+        android:name="com.example.kraftopia.ui.main.shop.Shop"
+        android:label="Kraftopia"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.kraftopia.ui.main.about.AboutUs"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.kraftopia.ui.main.profile.Profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.example.kraftopia.ui.main.contact.ContactUs"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact_us"/>
+    <fragment
+        android:id="@+id/nav_terms"
+        android:name="com.example.kraftopia.ui.main.terms.TermsAndCondition"
+        android:label="Terms and Condition"
+        tools:layout="@layout/fragment_terms_and_condition" />
+    <fragment
+        android:id="@+id/nav_feed"
+        android:name="com.example.kraftopia.ui.main.feed.Feed"
+        android:label="Feed"
+        tools:layout="@layout/fragment_feed"/>
+    <fragment
+        android:id="@+id/nav_order"
+        android:name="com.example.kraftopia.ui.main.order.Order"
+        android:label="@string/order"
+        tools:layout="@layout/fragment_order"/>
+    <fragment
+        android:id="@+id/nav_address"
+        android:name="com.example.kraftopia.ui.main.address.Address"
+        android:label="Address"
+        tools:layout="@layout/fragment_address" />
+</navigation>

@@ -52,11 +52,13 @@ class MainActivity : AppCompatActivity() {
             AppBarConfiguration(
                 setOf(
                     R.id.nav_shop,
+                    R.id.nav_order,
                     R.id.nav_profile,
                     R.id.nav_about,
                     R.id.nav_contact,
                     R.id.nav_terms,
-                    R.id.nav_feed
+                    R.id.nav_feed,
+                    R.id.nav_address
                 )
             )
         setupActionBarWithNavController(navController,appBarConfiguration)
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         // viewModel.fetchAddress()
         val bottomNavigationView: BottomNavigationView? =findViewById(R.id.bottom_nav_view)
         bottomNavigationView?.setupWithNavController(navController)
+        bottomNavigationView?.setOnNavigationItemReselectedListener {  }
 
     }
 
